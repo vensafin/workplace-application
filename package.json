@@ -1,0 +1,6 @@
+"homepage": "https://vensafin.github.io/workplace-application",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  ...
+}
