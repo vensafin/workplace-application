@@ -5,25 +5,35 @@
 
 form {
   display: inline-block;
-  text-align: left;
+  text-align: left; /* Выравниваем текст и поля по левому краю */
+  width: 100%;
+  max-width: 400px; /* Ограничиваем ширину формы */
 }
 
 label {
   display: block;
-  margin: 10px 0;
+  margin: 10px 0 5px; /* Отступы для label */
+  font-weight: bold;
 }
 
 input {
-  margin-left: 10px;
+  width: 100%; /* Ширина поля ввода на 100% */
+  padding: 8px;
+  margin-bottom: 15px; /* Отступ между полями */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 10px;
   background-color: #007bff;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
