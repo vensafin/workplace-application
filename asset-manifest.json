@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/workplace-application/static/css/main.5843dd47.css",
-    "main.js": "/workplace-application/static/js/main.f386ddae.js",
-    "static/js/453.86a97274.chunk.js": "/workplace-application/static/js/453.86a97274.chunk.js",
+    "main.js": "/workplace-application/static/js/main.ffc898d7.js",
+    "static/js/488.6fcc72db.chunk.js": "/workplace-application/static/js/488.6fcc72db.chunk.js",
     "index.html": "/workplace-application/index.html",
     "main.5843dd47.css.map": "/workplace-application/static/css/main.5843dd47.css.map",
-    "main.f386ddae.js.map": "/workplace-application/static/js/main.f386ddae.js.map",
-    "453.86a97274.chunk.js.map": "/workplace-application/static/js/453.86a97274.chunk.js.map"
+    "main.ffc898d7.js.map": "/workplace-application/static/js/main.ffc898d7.js.map",
+    "488.6fcc72db.chunk.js.map": "/workplace-application/static/js/488.6fcc72db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5843dd47.css",
-    "static/js/main.f386ddae.js"
+    "static/js/main.ffc898d7.js"
   ]
 }
