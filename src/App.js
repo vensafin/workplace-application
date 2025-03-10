@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { db, timestamp } from "./firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 function App() {
   const [formData, setFormData] = useState({
-    surname: '',
-    name: '',
-    patronymic: '',
-    position: '',
-    department: ''
+    surname: "",
+    name: "",
+    patronymic: "",
+    position: "",
+    department: ""
   });
 
   const handleChange = (e) => {
@@ -18,10 +20,29 @@ function App() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Заявка отправлена: ' + JSON.stringify(formData, null, 2));
-    // Здесь можно добавить отправку данных на сервер
+
+    try {
+      // Добавляем запись в Firestore
+      await addDoc(collection(db, "applications"), {
+        ...formData,
+        createdAt: timestamp(), // Дата и время создания
+        updatedAt: timestamp() // Дата и время изменения
+      });
+
+      alert("Заявка успешно отправлена!");
+      setFormData({
+        surname: "",
+        name: "",
+        patronymic: "",
+        position: "",
+        department: ""
+      });
+    } catch (error) {
+      console.error("Ошибка при отправке заявки: ", error);
+      alert("Произошла ошибка при отправке заявки.");
+    }
   };
 
   return (
@@ -38,7 +59,6 @@ function App() {
             required
           />
         </label>
-        <br />
         <label>
           Имя:
           <input
@@ -49,7 +69,6 @@ function App() {
             required
           />
         </label>
-        <br />
         <label>
           Отчество:
           <input
@@ -59,7 +78,6 @@ function App() {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Должность:
           <input
@@ -70,7 +88,6 @@ function App() {
             required
           />
         </label>
-        <br />
         <label>
           Отдел:
           <input
@@ -81,7 +98,6 @@ function App() {
             required
           />
         </label>
-        <br />
         <button type="submit">Отправить</button>
       </form>
     </div>
